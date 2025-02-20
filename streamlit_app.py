@@ -5,6 +5,21 @@ from ultralytics import YOLO
 from PIL import Image
 import pandas as pd
 from streamlit_drawable_canvas import st_canvas
+import gdown
+import os
+import torch
+
+MODEL_URL = "https://drive.google.com/uc?export=download&id=14iq_-amI-hGSALxfbDDIGcQFMUiFMExC"
+MODEL_PATH = "p&id.pt"
+
+
+if not os.path.exists(MODEL_PATH):
+    print("Downloading model from Google Drive...")
+    gdown.download(MODEL_URL, MODEL_PATH, quiet=False)
+    print("Model downloaded successfully!")
+
+# Load the YOLO model
+#model = torch.load(MODEL_PATH)
 
 # Load the YOLO model
 model = YOLO("p&id.pt")  # Replace with your trained YOLO model
