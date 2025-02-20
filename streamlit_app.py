@@ -31,16 +31,16 @@ all_classes = [
 ]
 
 # Streamlit UI
-st.title("Image Upload and YOLO Annotation with ROI Selection")
-st.write("Upload an image, select classes, draw an ROI, and the YOLO model will process it.")
+st.title("Adnoc P&ID Project")
+#st.write("Upload an image, select classes, draw an ROI, and the YOLO model will process it.")
 
 # Sidebar for file upload
 st.sidebar.header("Upload Image")
 uploaded_image = st.sidebar.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
 
 # Sidebar for class selection
-st.sidebar.header("Select Classes to Display")
-selected_classes = st.sidebar.multiselect("Choose classes to display:", all_classes, default=all_classes)
+st.sidebar.header("Select parts to Display")
+selected_classes = st.sidebar.multiselect("Choose parts to display:", all_classes, default=all_classes)
 
 if uploaded_image is not None:
     # Read the image
@@ -113,7 +113,7 @@ if uploaded_image is not None:
             
             # Convert counts to a DataFrame and display as a table
             df = pd.DataFrame(list(class_counts.items()), columns=["Class", "Count"])
-            st.write("### Object Detection Counts in ROI")
+            st.write("### Part Counts in ROI")
             st.table(df)
             
             # Display the annotated ROI image
