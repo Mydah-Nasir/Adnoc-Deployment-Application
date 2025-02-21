@@ -32,7 +32,7 @@ all_classes = [
 
 # Streamlit UI
 st.title("Adnoc P&ID Project")
-#st.write("Upload an image, select classes, draw an ROI, and the YOLO model will process it.")
+st.write("Upload an image, select classes, draw an ROI, and the YOLO model will process it.")
 
 # Sidebar for file upload
 st.sidebar.header("Upload Image")
